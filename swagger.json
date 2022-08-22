@@ -1,0 +1,76 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Stutern Test",
+    "description": "",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:9000",
+  "basePath": "/api",
+  "tags": [],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/stations/all": {
+      "get": {
+        "tags": ["Stations"],
+        "summary": "Get all stations in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Stations"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Station": {
+      "required": [],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "kioskId": {
+          "type": "string"
+        },
+        "coordinatess": {
+          "type": "array"
+        },
+        "totalDocks": {
+          "type": "string"
+        },
+        "docksAvailable": {
+          "type": "string"
+        },
+        "bikesAvailable": {
+          "type": "string"
+        },
+        "kioskStatus": {
+          "type": "string"
+        },
+        "kioskPublicStatus": {
+          "type": "string"
+        },
+        "addressStreet": {
+          "type": "string"
+        }
+      }
+    },
+    "Stations": {
+      "type": "array",
+      "$ref": "#/definitions/Station"
+    }
+  }
+}

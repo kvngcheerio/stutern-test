@@ -1,0 +1,1 @@
+exports.EVERY_HOUR = '0 0 * * * *';
